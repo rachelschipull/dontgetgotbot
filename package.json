@@ -1,16 +1,25 @@
 {
   "name": "dontgetgotbot",
   "version": "1.0.0",
-  "description": "",
+  "description": "Twitter bot that retweets #100Devs tweets in the hour before and after meetings so agency members don't 'get got' by missing the meetings.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Eric Jakobsen and  Rachel Schipull",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.0.1",
     "mongodb": "^4.8.1",
     "twit": "^2.2.11",
     "twitter-api-v2": "^1.12.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gentlegiantdev/dontgetgotbot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gentlegiantdev/dontgetgotbot/issues"
+  },
+  "homepage": "https://github.com/gentlegiantdev/dontgetgotbot#readme"
 }
