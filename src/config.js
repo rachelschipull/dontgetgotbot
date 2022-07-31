@@ -9,9 +9,15 @@ module.exports = {
     access_token: process.env.TWITTER_ACCESS_TOKEN,
     access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
   },
+  //Sets hashtags we are targeting
   query: '#100Devs, #100DEVS',
+  //Gets most recent rather than most popular
   result_type: 'recent',
+  //Onl english language
   lang: 'en',
+
+  //below are a bunch of variables 100DaysofCode-twitter-bot were storing in their .env file, I guess. I kept in case things wouldn't run to see if one of them might be necessary. It seems to run fine without them.
+
 //   twitterConfig: {
 //     queryString: process.env.QUERY_STRING,
 //     username: process.env.TWITTER_USERNAME,

@@ -7,7 +7,7 @@ console.log('==== DontGetGotBot Starting... ====');
 const Twit = require('twit');
 // const schedule = require('node-schedule');
 
-//MongoClient only needed if we start storing text for tweets to be sent. Currently bot is only retweeting.
+//MongoClient only needed if we start storing text to add to retweets or as original tweets. Currently bot is only retweeting.
 // const MongoClient = require('mongodb').MongoClient
 
 // Configuration
@@ -26,7 +26,12 @@ const retweet = () => {
   TwitterBot.get('search/tweets', params, (err, data) => {
     // when no errors
     if (!err) {
+        //Current param checks if it is a quote tweet
       if (data.statuses[0].is_quote_status === true) {
+
+        //&& data.statuses[0].full_text.split('#').length - 1 === 1
+        //above can be added as a param to only select tweets with a single hashtag
+
         // If it is a quote tweet, get the tweet's ID
         let retweetID = data.statuses[0].id_str;
         console.log(data.statuses[0]);
@@ -56,6 +61,8 @@ retweet();
 // 2 minutes
 setInterval(retweet, 120000);
 
+
+//Below is from 100DaysofCode-twitter-bot. It is a separate function to tweet reminders about their Discord. We might be able to reconfigure components and add in to our methods to schedule them. 
 
 // const tweetDiscordLink = () => {
 //   const tweet = `${SHARE_DISCORD_CHANNEL_LINK}`;
